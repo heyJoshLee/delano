@@ -4,12 +4,15 @@
   <button type="button" class="btn btn-primary btn-sm">New Deal</button>
 <% end %>
 
-<ul>
+<ul class="list-group">
 
 
 <% @deals.each do |deal| %>
-  <li>
-    <%= deal.name %>
+  <li class="list-group-item border-secondary">
+    <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+    <%= link_to deal_path(deal) do %>
+      <%=deal.name%>
+    <% end %>
   </li>
   <% end %>
 
