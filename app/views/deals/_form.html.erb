@@ -1,0 +1,10 @@
+<%= bootstrap_form_for deal do |form| %>
+  <div>
+    <%= form.text_field :name, class: "border border-secondary" %>
+    <%= form.text_field :source, class: "border border-secondary" %>
+    <%= form.text_field :rating, class: "border border-secondary" %>
+    <%= form.select :status, Deal::STATUS_OPTIONS, { class: "border border-secondary"} %>
+    <%= form.text_area :notes, class: "border border-secondary" %>
+    <%= form.submit "Save Deal" %> 
+  </div>
+<% end %>
