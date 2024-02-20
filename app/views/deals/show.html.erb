@@ -1,8 +1,24 @@
 <%= link_to "Back to deals", deals_path %>
 
-<h1><%=@deal.name%></h1>
+<%= bootstrap_form_for @deal do |form| %>
 
-<p><%=@deal.source %>
-<p><%=@deal.rating %>
-<p><%=@deal.notes %>
-<p><%=@deal.status %>
+  <h1>
+    <%=@deal.name%>
+    <i class="bi bi-pencil-square"></i>
+    <%= form.text_field :name, class: "border border-secondary" %>
+  </h1>
+
+
+  <strong class="border-bottom">Source</strong>
+  <p><%=@deal.source %><p>
+
+  <strong class="border-bottom">Rating</strong>
+  <p><%=@deal.rating %> </p>
+  <strong class="border-bottom">Notes</strong>
+
+  <p><%=@deal.status %> </p>
+
+  <p><%=@deal.notes %> </p>
+  <strong class="border-bottom">Status</strong>
+
+<%end%>

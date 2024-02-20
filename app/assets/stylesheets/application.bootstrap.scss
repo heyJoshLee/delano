@@ -2,6 +2,13 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "rails_bootstrap_forms.css";
 
+@import "bootstrap-icons/font/bootstrap-icons";
+@font-face {
+  font-family: "bootstrap-icons";
+  src: font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+    font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}
+
 html, body {
   height: 100vh
 }

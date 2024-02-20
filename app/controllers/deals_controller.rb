@@ -22,6 +22,14 @@ class DealsController < ApplicationController
     end
   end
 
+  def edit
+    @deal = Deal.find(params[:id])
+  end
+
+  def update
+    @deal = Deal.find(params[:id])
+  end
+
 
   private
 
