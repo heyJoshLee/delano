@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_21_160538) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_21_162527) do
+  create_table "businesses", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "notes"
+    t.string "phone"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "country"
+    t.integer "rating"
+    t.integer "status"
+    t.integer "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_businesses_on_organization_id"
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"

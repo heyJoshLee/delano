@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   root "pages#home"
 
 
+resources :organizations do 
+  resources :businesses
+end
+
+
   resources :deals
-  resources :organizations
   resources :users
   resources :sessions
   post "/login", to: "sessions#create"

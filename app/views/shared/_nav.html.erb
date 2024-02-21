@@ -10,6 +10,9 @@
       <%= link_to "Organizations", organizations_path, class: "nav-link text-white" %>
     </li>
     <li class="nav-item">
+      <%= link_to "Businesses", organization_businesses_path(@current_user.organization), class: "nav-link text-white" %>
+    </li>
+    <li class="nav-item">
       <%= link_to "Log out", "/logout", class: "nav-link text-white" %>
     </li>
 

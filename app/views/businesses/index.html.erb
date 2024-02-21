@@ -1,0 +1,17 @@
+<h1>Businesses</h1>
+
+<%= link_to new_organization_business_path do %>
+  <button type='button' class='btn btn-primary btn-sm'>New business</button>
+<% end %>
+
+<ul class='list-group'>
+
+<% @businessses.each do |business| %>
+    <li class='list-group-item'>
+      <%= link_to business_path(business) do %>
+        <%=business.name%>
+      <% end %>
+    </li>
+  <% end %>
+
+</ul>

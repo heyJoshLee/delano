@@ -1,0 +1,10 @@
+<%= link_to 'Back to businessses', organization_businesses_path(@current_user.organization) %>
+
+
+  <h1>
+    <%=@business.name%>
+    <%= link_to 'Edit', edit_organization_business_path(@current_user.organization)%>
+  </h1>
+
+  <strong class='border-bottom'>Name</strong>
+  <p><%=@business.name%><p>
