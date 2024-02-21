@@ -1,13 +1,13 @@
-<%= link_to 'Back to organizations', organization_path %>
+<%= link_to 'Back to deals', deals_path %>
 
-<%= bootstrap_form_for @organization do |form| %>
+<%= bootstrap_form_for @deal do |form| %>
 
   <h1>
-    <%=@organization.name%>
-    <%= link_to 'Edit', edit_organization_path(@organization)%>
+    <%=@deal.name%>
+    <%= link_to 'Edit', edit_deal_path(@deal)%>
   </h1>
 
   <strong class='border-bottom'>Name</strong>
-  <p><%=@organization.name%><p>
+  <p>@deal.name<p>
 
 <%end%>

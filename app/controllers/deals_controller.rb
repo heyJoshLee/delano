@@ -17,6 +17,8 @@ class DealsController < ApplicationController
   def create
     puts deal_params
     @deal = Deal.new(deal_params)
+    @deal.user_id = @current_user.id
+    @deal.organization_id = @current_user.organization_id
     if @deal.save
       redirect_to @deal
     else
