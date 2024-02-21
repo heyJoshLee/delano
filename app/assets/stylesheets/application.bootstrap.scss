@@ -1,8 +1,6 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import 'bootstrap';
 @import "rails_bootstrap_forms.css";
 
-@import "bootstrap-icons/font/bootstrap-icons";
 @font-face {
   font-family: "bootstrap-icons";
   src: font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),

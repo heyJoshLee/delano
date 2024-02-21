@@ -1,10 +1,5 @@
 # README
    
-Currently working on 
-- add flash messages
-- protect routes
-- fix grabbing the current user's info
-
 Then
 - add contacts
   - contacts image upload
