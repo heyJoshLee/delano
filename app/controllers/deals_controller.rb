@@ -3,7 +3,7 @@ class DealsController < ApplicationController
   before_action :require_login
 
   def index
-    @deals = Deal.all
+    @deals = @current_user.deals
   end
 
   def new

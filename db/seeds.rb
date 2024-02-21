@@ -8,18 +8,14 @@
 
 
 Deal.destroy_all
+Organization.destroy_all
+User.destroy_all
 
-Deal.create([
-  {
-    name: "great deal"
-  },
-  {
-    name: "great deal 2"
-  },
-  {
-    name: "great deal 3"
-  },
-  {
-    name: "great deal 4"
-  },
-])
+
+org = Organization.create(name: "Great Org")
+user = User.create(email: "email@email.com", password: "password", organization: org)
+deal_1 = Deal.create(name: "great deal", source: "google.com", rating: 1, status: 1, notes: "This is a great one", organization: org, user: user)
+deal_2 = Deal.create(name: "great deal", source: "google.com", rating: 2, status: 2, notes: "This is a great two", organization: org, user: user)
+deal_3 = Deal.create(name: "great deal", source: "google.com", rating: 3, status: 3, notes: "This is a great three", organization: org, user: user)
+deal_4 = Deal.create(name: "great deal", source: "google.com", rating: 4, status: 4, notes: "This is a great four", organization: org, user: user)
+deal_5 = Deal.create(name: "great deal", source: "google.com", rating: 5, status: 5, notes: "This is a great five", organization: org, user: user)
