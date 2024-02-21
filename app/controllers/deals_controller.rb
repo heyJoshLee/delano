@@ -28,6 +28,12 @@ class DealsController < ApplicationController
 
   def update
     @deal = Deal.find(params[:id])
+
+    if @deal.update(deal_params)
+      redirect_to @deal
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
 

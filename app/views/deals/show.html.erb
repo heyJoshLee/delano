@@ -4,8 +4,7 @@
 
   <h1>
     <%=@deal.name%>
-    <i class="bi bi-pencil-square"></i>
-    <%= form.text_field :name, class: "border border-secondary" %>
+    <%= link_to "Edit", edit_deal_path(@deal), class: 'fs-5 test' %>
   </h1>
 
 
@@ -14,11 +13,11 @@
 
   <strong class="border-bottom">Rating</strong>
   <p><%=@deal.rating %> </p>
-  <strong class="border-bottom">Notes</strong>
-
-  <p><%=@deal.status %> </p>
-
-  <p><%=@deal.notes %> </p>
+  
   <strong class="border-bottom">Status</strong>
+  <p><%=@deal.status %> </p>
+  
+  <strong class="border-bottom">Notes</strong>
+  <p><%=@deal.notes %> </p>
 
 <%end%>
