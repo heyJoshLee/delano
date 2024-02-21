@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :deals
   resources :organizations
-
+  resources :users
+  resources :sessions
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
 
 end

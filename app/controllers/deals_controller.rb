@@ -1,5 +1,7 @@
 class DealsController < ApplicationController
 
+  before_action :require_login
+
   def index
     @deals = Deal.all
   end

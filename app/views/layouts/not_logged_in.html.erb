@@ -11,15 +11,13 @@
   </head>
 
   <body>
-  
-    <div class="container-fluid">
-      <div class="row align-items-start vh-100">
-          <%= render "shared/nav" %>
-          <div class="col-8">
-            <%= render "shared/flashes" %>
-            <%= yield %>
-          </div>
+    <div class="container-fluid bg-primary">
+      <div class="row vh-100">
+      <%= render 'shared/flashes' %>
+
+        <%= yield %>  
       </div>
     </div>
+
   </body>
 </html>
