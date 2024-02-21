@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   add_flash_types :info, :error, :warning, :success
-
+ 
   def require_login
     if !current_user
       flash[:danger] = "You must be logged in to view that page."
