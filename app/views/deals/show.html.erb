@@ -16,3 +16,12 @@
 
   <strong class='border-bottom'>Name</strong>
   <p><%=@deal.notes%><p>
+
+  <%= render "activities/mini_form", active: @deal %>
+  
+  <h2>Activities<%= @deal.activities.count%></h2>
+
+  <% @deal.activities.each do |activity|  %>
+    <%= activity.title %>
+  <% end %>
+ 

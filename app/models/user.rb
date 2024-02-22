@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :password, presence: true
   belongs_to :organization
   has_many :deals
+  has_many :activities, as: :active
+
 
 end
 

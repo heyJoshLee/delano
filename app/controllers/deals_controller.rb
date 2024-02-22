@@ -8,6 +8,7 @@ class DealsController < ApplicationController
 
   def new
     @deal = Deal.new
+    @organization = Current.user.organization
   end
 
   def show
@@ -20,7 +21,7 @@ class DealsController < ApplicationController
     @deal.user_id = Current.user.id
     @deal.organization_id = Current.user.organization_id
     if @deal.save
-      redirect_to @deal
+      redirect_to organization_deal_path(@deal.organization, @deal)
     else
       render :new, status: :unprocessable_entity
     end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "pages#home"
 
 
+
 resources :organizations do 
   resources :businesses
   resources :contacts
@@ -14,6 +15,7 @@ end
 
   resources :users
   resources :sessions
+  resources :activities
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
 
