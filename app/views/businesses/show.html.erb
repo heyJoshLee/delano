@@ -8,3 +8,14 @@
 
   <strong class='border-bottom'>Name</strong>
   <p><%=@business.name%><p>
+
+
+
+  <%= render "activities/mini_form", active: @business %>
+  
+  <h2>Activities<%= @business.activities.count%></h2>
+
+  <% @business.activities.each do |activity|  %>
+    <%= activity.title %>
+  <% end %>
+ 

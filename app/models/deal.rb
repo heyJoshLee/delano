@@ -1,6 +1,8 @@
 class Deal < ApplicationRecord
   belongs_to :organization
   has_one :user
+  has_many :activities, as: :active
+
 
   STATUS_OPTIONS = [
       ["Cold", 0],
