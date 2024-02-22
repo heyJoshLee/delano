@@ -1,4 +1,6 @@
 class Deal < ApplicationRecord
+  belongs_to :organization
+  has_one :user
 
   STATUS_OPTIONS = [
       ["Cold", 0],

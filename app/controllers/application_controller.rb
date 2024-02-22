@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "You must be logged in to view that page."
       redirect_to new_session_path
     end
+
   end
 
   def current_user

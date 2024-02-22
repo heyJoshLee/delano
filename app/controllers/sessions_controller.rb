@@ -10,8 +10,12 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = "Error with logging in."
-      render :new, message: "Error with Logging in"
+      render :new, message: "Error with Logging in", status: 422
     end
+  end
+
+  def new
+    redirect_to root_path if current_user
   end
 
   def destroy

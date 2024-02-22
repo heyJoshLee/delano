@@ -1,5 +1,9 @@
 # README
    
+Currently working on
+- fix js / bootstrap js issue so I can remove flash messages
+
+
 Then
 - add contacts
   - contacts image upload

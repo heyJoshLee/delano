@@ -5,5 +5,6 @@ class User < ApplicationRecord
   validates :password, presence: true
   belongs_to :organization
   has_many :deals
+
 end
 
