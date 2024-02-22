@@ -3,11 +3,10 @@
 Currently working on
 
 Then
-- add contacts
-  - contacts image upload
-- Activities polymorphic
+- Model page designs
+- return all activies for org 
+- contacts image upload
 - quick page reloads
-- associations between user, business, deal, contact
 - rss feed reader
 - email from app
 - auto emails from chat GPT
