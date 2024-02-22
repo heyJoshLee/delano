@@ -1,6 +1,6 @@
 <h1>Deals</h1>
 
-<%= link_to new_deal_path do %>
+<%= link_to new_organization_deal_path(Current.user.organization) do %>
   <button type="button" class="btn btn-primary btn-sm">New Deal</button>
 <% end %>
 
@@ -10,7 +10,7 @@
 <% @deals.each do |deal| %>
   <li class="list-group-item border-secondary">
     <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-    <%= link_to deal_path(deal) do %>
+    <%= link_to organization_deal_path(Current.user.organization, deal) do %>
       <%=deal.name%>
     <% end %>
   </li>

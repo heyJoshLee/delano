@@ -15,6 +15,8 @@ User.destroy_all
 
 org = Organization.create(name: "Great Org")
 user = User.create(email: "email@email.com", password: "password")
+user.organization = org
+user.save
 
 
 5.times do |n| 

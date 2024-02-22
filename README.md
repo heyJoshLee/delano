@@ -1,9 +1,6 @@
 # README
    
 Currently working on
-Create current class to fix accesssing current user attributes
-https://edgeapi.rubyonrails.org/classes/ActiveSupport/CurrentAttributes.html
-
 
 Then
 - add contacts

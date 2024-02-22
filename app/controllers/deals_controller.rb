@@ -28,13 +28,14 @@ class DealsController < ApplicationController
 
   def edit
     @deal = Deal.find(params[:id])
+    @organization = @deal.organization
   end
 
   def update
     @deal = Deal.find(params[:id])
-
+    @organization = @deal.organization
     if @deal.update(deal_params)
-      redirect_to @deal
+      redirect_to organization_deal_path(@organization, @deal)
     else
       render :edit, status: :unprocessable_entity
     end

@@ -7,10 +7,11 @@ Rails.application.routes.draw do
 
 resources :organizations do 
   resources :businesses
+  resources :contacts
+  resources :deals
 end
 
 
-  resources :deals
   resources :users
   resources :sessions
   post "/login", to: "sessions#create"

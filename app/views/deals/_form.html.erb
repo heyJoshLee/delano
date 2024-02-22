@@ -1,4 +1,4 @@
-<%= bootstrap_form_for deal do |form| %>
+<%= bootstrap_form_for [organization, deal] do |form| %>
   <div>
     <%= form.text_field :name, class: "border border-secondary" %>
     <%= form.text_field :source, class: "border border-secondary" %>

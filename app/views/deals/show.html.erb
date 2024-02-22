@@ -1,8 +1,8 @@
-<%= link_to 'Back to deals', deals_path %>
+<%= link_to 'Back to deals', organization_deals_path(@deal.organization) %>
 
   <h1>
     <%=@deal.name%>
-    <%= link_to 'Edit', edit_deal_path(@deal)%>
+    <%= link_to 'Edit', edit_organization_deal_path(@deal.organization, @deal)%>
   </h1>
 
   <strong class='border-bottom'>Name</strong>

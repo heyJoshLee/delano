@@ -1,0 +1,10 @@
+<%= link_to 'Back to contacts', organization_contacts_path(@contact.organization) %>
+
+
+  <h1>
+    <%=@contact.first_name %>
+    <%= link_to 'Edit', edit_organization_contact_path(@contact.organization, @contact)%>
+  </h1>
+
+  <strong class='border-bottom'>Name</strong>
+  <p><%=@contact.first_name%><p> 

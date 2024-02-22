@@ -1,0 +1,17 @@
+<h1>Contacts</h1>
+
+<%= link_to new_organization_contact_path do %>
+  <button type='button' class='btn btn-primary btn-sm'>New contact</button>
+<% end %>
+
+<ul class='list-group'>
+
+<% @contacts.each do |contact| %>
+    <li class='list-group-item'>
+      <%= link_to organization_contact_path(Current.user.organization, contact) do %>
+        <%=contact.first_name%>
+      <% end %>
+    </li>
+  <% end %>
+
+</ul>
