@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  # before_action :current_user, [:home]
+  
+  before_action :require_login
 
   def home
   end

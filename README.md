@@ -1,7 +1,8 @@
 # README
    
 Currently working on
-- fix js / bootstrap js issue so I can remove flash messages
+Create current class to fix accesssing current user attributes
+https://edgeapi.rubyonrails.org/classes/ActiveSupport/CurrentAttributes.html
 
 
 Then

@@ -10,7 +10,7 @@
       <%= link_to "Organizations", organizations_path, class: "nav-link text-white" %>
     </li>
     <li class="nav-item">
-      <%= link_to "Businesses", organization_businesses_path(@current_user.organization), class: "nav-link text-white" %>
+      <%= link_to "Businesses", organization_businesses_path(Current.user.organization), class: "nav-link text-white" %>
     </li>
     <li class="nav-item">
       <%= link_to "Log out", "/logout", class: "nav-link text-white" %>
@@ -20,7 +20,7 @@
 
 
   <div>
-    <p><%= @current_user.email %></p>
-    <p><%= @current_user.organization.name %></p>
+    <p><%= Current.user.email %></p>
+    <p><%= Current.user.organization.name %></p>
   </div>
 </div>

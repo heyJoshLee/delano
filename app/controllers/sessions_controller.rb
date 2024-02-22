@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def new
-    redirect_to root_path if current_user
+    redirect_to root_path if Current.user
   end
 
   def destroy
