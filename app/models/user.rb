@@ -8,5 +8,10 @@ class User < ApplicationRecord
   has_many :activities, as: :active
 
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+
 end
 

@@ -36,9 +36,9 @@
             .card-body
               .row.align-items-center.g-3
                 .col-12.col-sm-auto.flex-1
-                  %h3.fw-bolder.mb-2.line-clamp-1 Start-Up Growth Suite
+                  %h3.fw-bolder.mb-2.line-clamp-1= @deal.name
                   .d-flex.align-items-center.mb-4
-                    %h5.mb-0.me-4 USD $12,000.00
+                    %h5.mb-0.me-4= "#{@deal.value} USD"
                     %h5.fw-semibold
                       %span.d-inline-block.lh-sm.me-1{"data-feather" => "grid", :style => "height:16px;width:16px;"}
                       %span.d-inline-block.lh-sm Financial
@@ -47,7 +47,7 @@
                       .avatar.avatar-xl.me-3
                         %img.rounded-circle{:alt => "", :src => "../../assets/img/team/72x72/58.webp"}/
                       %div
-                        %h5 Ansolo Lazinatov
+                        %h5= @deal.user.full_name
                         .dropdown
                           %a.text-body-secondary.dropdown-toggle.text-decoration-none.dropdown-caret-none{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#!"}
                             Owner
@@ -88,7 +88,7 @@
                     %span.text-success-dark{"data-feather" => "dollar-sign", :style => "width:24px; height:24px"}
                   %div
                     %p.fw-bold.mb-1 Deal Amount
-                    %h4.fw-bolder.text-nowrap $12,000.00
+                    %h4.fw-bolder.text-nowrap= @deal.value
               .col-sm-auto
                 .d-sm-block.d-inline-flex.d-md-flex.flex-xl-column.flex-xxl-row.align-items-center.align-items-xl-start.align-items-xxl-center.border-start-sm.ps-sm-5.border-translucent
                   .d-flex.bg-info-subtle.rounded.flex-center.me-3.mb-sm-3.mb-md-0.mb-xl-3.mb-xxl-0{:style => "width:32px; height:32px"}
@@ -102,7 +102,7 @@
                     %span.text-primary-dark{"data-feather" => "layout", :style => "width:24px; height:24px"}
                   %div
                     %p.fw-bold.mb-1 Deal Type
-                    %h4.fw-bolder.text-nowrap New Business
+                    %h4.fw-bolder.text-nowrap= @deal.deal_type
         .px-xl-4.mb-7
           .row.mx-0.mx-sm-3.mx-lg-0.px-lg-0
             .col-sm-12.col-xxl-6.border-bottom.border-end-xxl.border-translucent.py-3
@@ -167,7 +167,7 @@
                       %p.fw-bold.mb-0 Contact Name
                   %td.py-2.d-none.d-sm-block.pe-sm-2 :
                   %td.py-2
-                    .ps-6.ps-sm-0.fw-semibold.mb-0.pb-3.pb-sm-0 Jackson Pollock
+                    .ps-6.ps-sm-0.fw-semibold.mb-0.pb-3.pb-sm-0 TODO ADD
                 %tr
                   %td.py-2
                     .d-flex.align-items-center
@@ -191,7 +191,7 @@
                       %p.fw-bold.mb-0 Create Date
                   %td.py-2.d-none.d-sm-block.pe-sm-2 :
                   %td.py-2
-                    .ps-6.ps-sm-0.fw-semibold.mb-0.pb-3.pb-sm-0 Nov 30, 2022
+                    .ps-6.ps-sm-0.fw-semibold.mb-0.pb-3.pb-sm-0= @deal.created_at
                 %tr
                   %td.py-2
                     .d-flex.align-items-center
@@ -200,7 +200,7 @@
                       %p.fw-bold.mb-0 Closing Date
                   %td.py-2.d-none.d-sm-block.pe-sm-2 :
                   %td.py-2
-                    .ps-6.ps-sm-0.fw-semibold.mb-0 Dec 15, 2022
+                    .ps-6.ps-sm-0.fw-semibold.mb-0= @deal.close_date
         %ul#myTab.nav.nav-underline.fs-9.deal-details.scrollbar.flex-nowrap.w-100.pb-1.mb-6{:role => "tablist", :style => "overflow-y: hidden;"}
           %li.nav-item.text-nowrap.me-2{:role => "presentation"}
             %a#activity-tab.nav-link.active{"aria-controls" => "tab-activity", "aria-selected" => "false", "data-bs-toggle" => "tab", :href => "#tab-activity", :role => "tab", :tabindex => "-1"}
@@ -231,66 +231,4 @@
               %span.fa-solid.fa-paperclip.me-2.tab-icon-color>
               Attachments
         = render "tab_content"
-  %footer.footer.position-absolute
-    .row.g-0.justify-content-between.align-items-center.h-100
-      .col-12.col-sm-auto.text-center
-        %p.mb-0.mt-2.mt-sm-0.text-body
-          Thank you for creating with Phoenix
-          %span.d-none.d-sm-inline-block
-          %span.d-none.d-sm-inline-block.mx-1 |
-          = succeed "2024" do
-            %br.d-sm-none/
-          %a.mx-1{:href => "https://themewagon.com"} Themewagon
-      .col-12.col-sm-auto.text-center
-        %p.mb-0.text-body-tertiary.text-opacity-85 v1.15.0
-.support-chat-container
-  .container-fluid.support-chat
-    .card.bg-body-emphasis
-      .card-header.d-flex.flex-between-center.px-4.py-3.border-bottom.border-translucent
-        %h5.mb-0.d-flex.align-items-center.gap-2
-          Demo widget
-          %span.fa-solid.fa-circle.text-success.fs-11
-        .btn-reveal-trigger
-          %button#support-chat-dropdown.btn.btn-link.p-0.dropdown-toggle.dropdown-caret-none.transition-none.d-flex{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-toggle" => "dropdown", :type => "button"}
-            %span.fas.fa-ellipsis-h.text-body
-          .dropdown-menu.dropdown-menu-end.py-2{"aria-labelledby" => "support-chat-dropdown"}
-            %a.dropdown-item{:href => "#!"} Request a callback
-            %a.dropdown-item{:href => "#!"} Search in chat
-            %a.dropdown-item{:href => "#!"} Show history
-            %a.dropdown-item{:href => "#!"} Report to Admin
-            %a.dropdown-item.btn-support-chat{:href => "#!"} Close Support
-      .card-body.chat.p-0
-        .d-flex.flex-column-reverse.scrollbar.h-100.p-3
-          .text-end.mt-6
-            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
-              %p.mb-0.fw-semibold.fs-9 I need help with something
-              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
-            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
-              %p.mb-0.fw-semibold.fs-9 I can’t reorder a product I previously ordered
-              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
-            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
-              %p.mb-0.fw-semibold.fs-9 How do I place an order?
-              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
-            %a.false.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
-              %p.mb-0.fw-semibold.fs-9 My payment method not working
-              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
-          .text-center.mt-auto
-            .avatar.avatar-3xl.status-online
-              %img.rounded-circle.border.border-3.border-light-subtle{:alt => "", :src => "../../assets/img/team/30.webp"}/
-            %h5.mt-2.mb-3 Eric
-            %p.text-center.text-body-emphasis.mb-0 Ask us anything – we’ll get back to you here or by email within 24 hours.
-      .card-footer.d-flex.align-items-center.gap-2.border-top.border-translucent.ps-3.pe-4.py-3
-        .d-flex.align-items-center.flex-1.gap-3.border.border-translucent.rounded-pill.px-4
-          %input.form-control.outline-none.border-0.flex-1.fs-9.px-0{:placeholder => "Write message", :type => "text"}/
-          %label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0{:for => "supportChatPhotos"}
-            %span.fa-solid.fa-image
-          %input#supportChatPhotos.d-none{:accept => "image/*", :type => "file"}/
-          %label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0{:for => "supportChatAttachment"}
-            %span.fa-solid.fa-paperclip
-          %input#supportChatAttachment.d-none{:type => "file"}/
-        %button.btn.p-0.border-0.send-btn
-          %span.fa-solid.fa-paper-plane.fs-9
-  %button.btn.p-0.border.border-translucent.btn-support-chat
-    %span.fs-8.btn-text.text-primary.text-nowrap Chat demo
-    %span.fa-solid.fa-circle.text-success.fs-9.ms-2
-    %span.fa-solid.fa-chevron-down.text-primary.fs-7
+

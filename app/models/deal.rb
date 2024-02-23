@@ -1,6 +1,6 @@
 class Deal < ApplicationRecord
   belongs_to :organization
-  has_one :user
+  belongs_to :user
   belongs_to :business
   has_many :activities, as: :active
   has_one :contact
