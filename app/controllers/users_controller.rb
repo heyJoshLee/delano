@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
-  layout "not_logged_in"
+  layout "not_logged_in", except: [:show]
+
+  before_action set_user
+
 
   def create
     @user = User.new(user_params)
@@ -20,7 +23,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+
+  end
+
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:email, :password)

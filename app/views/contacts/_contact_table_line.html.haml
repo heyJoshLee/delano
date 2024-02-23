@@ -2,7 +2,7 @@
 %tr.hover-actions-trigger.btn-reveal-trigger.position-static
   %td.fs-9.align-middle
     .form-check.mb-0.fs-8
-      //%input.form-check-input{"data-bulk-select-row" => "{"customer":{"avatar":"/team/32.webp","name":"#{contact.full_name}","designation":"VP Accounting","status":{"label":"new lead","type":"badge-phoenix-primary"}},"email":"#{contact.email}","phone":"#{contact.phone}","contact":"Ally Aagaard","company":"Google.inc","date":"Jan 01, 12:56 PM"}", :type => "checkbox"}/
+      %input.form-check-input{:data-bulk-select-row => "{'customer':{'avatar':'/team/32.webp','name':'#{contact.full_name}','designation':'#{contact.title}','status':{'label':'new lead','type':'badge-phoenix-primary'}},'email':'#{contact.email}','phone':'#{contact.phone}','contact':'#{contact.user.full_name}','company':'#{contact.business.name}','date': #{contact.created_at}}', :type => 'checkbox'"}
   %td.name.align-middle.white-space-nowrap.ps-0
     .d-flex.align-items-center
       %a{:href => "#{organization_contact_path(contact.organization, contact)}"}
@@ -12,14 +12,14 @@
         %a.fs-8.fw-bold{:href => "#{organization_contact_path(contact.organization, contact)}"}= contact.full_name
         .d-flex.align-items-center
           %p.mb-0.text-body-highlight.fw-semibold.fs-9.me-2= contact.title
-          %span.badge.badge-phoenix.badge-phoenix-primary new lead
+          %span.badge.badge-phoenix.badge-phoenix-primary= "#{contact.status} FIX dynamic badge"
   %td.email.align-middle.white-space-nowrap.fw-semibold.ps-4.border-end.border-translucent
     %a.text-body-highlight{:href => "mailto:#{contact.email}"}= contact.email
   %td.phone.align-middle.white-space-nowrap.fw-semibold.ps-4.border-end.border-translucent
     %a.text-body-highlight{:href => "tel:#{contact.phone}"}= contact.phone
-  %td.contact.align-middle.white-space-nowrap.ps-4.border-end.border-translucent.fw-semibold.text-body-highlight Ally Aagaard
-  %td.company.align-middle.white-space-nowrap.text-body-tertiary.text-opacity-85.ps-4.border-end.border-translucent.fw-semibold.text-body-highlight Google.inc
-  %td.date.align-middle.white-space-nowrap.text-body-tertiary.text-opacity-85.ps-4.text-body-tertiary Jan 01, 12:56 PM
+  %td.contact.align-middle.white-space-nowrap.ps-4.border-end.border-translucent.fw-semibold.text-body-highlight= link_to contact.user.full_name, user_path(contact.user)
+  %td.company.align-middle.white-space-nowrap.text-body-tertiary.text-opacity-85.ps-4.border-end.border-translucent.fw-semibold.text-body-highlight= contact.business.name
+  %td.date.align-middle.white-space-nowrap.text-body-tertiary.text-opacity-85.ps-4.text-body-tertiary= contact.created_at
   %td.align-middle.white-space-nowrap.text-end.pe-0.ps-4
     .btn-reveal-trigger.position-static
       %button.btn.btn-sm.dropdown-toggle.dropdown-caret-none.transition-none.btn-reveal.fs-10{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-toggle" => "dropdown", :type => "button"}

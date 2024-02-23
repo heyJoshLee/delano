@@ -11,7 +11,7 @@
       .col-12
         .row.align-items-center.justify-content-between.g-3.mb-3
           .col-12.col-md-auto
-            %h2.mb-0 Lead details
+            %h2.mb-0 Contact details
           .col-12.col-md-auto
             .d-flex
               .flex-1.d-md-none
@@ -50,8 +50,8 @@
                       %img.rounded-circle{:alt => "", :src => "../../assets/img/team/33.webp"}/
                   .col-12.col-sm-auto.flex-1
                     %h3.fw-bolder.mb-2= @contact.full_name
-                    %p.mb-0 Chief tech officer,
-                    %a.fw-bold{:href => "#!"} Blue Beetles
+                    %p.mb-0= @contact.title
+                    %a.fw-bold{:href => "#{organization_business_path(@contact.organization, @contact.business)}"}= @contact.business.name
             = render "about_pane", contact: @contact
             = render "address_pane"
           .phoenix-offcanvas-backdrop.d-lg-none.top-0{"data-phoenix-backdrop" => "data-phoenix-backdrop"}

@@ -64,12 +64,13 @@ end
     status: statuses.shuffle.first,
     notes: Faker::Lorem.paragraph,
     organization_id: org.id,
-    business_id: Business.all.shuffle.first.id
+    business_id: Business.all.shuffle.first.id,
+    user: User.all.shuffle.first
   )
 end
 
 # create deals
-10.times do 
+100.times do 
   d = Deal.create(
     name: Faker::Marketing.buzzwords.capitalize,
     source: Faker::Internet.url,
