@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_22_133620) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_23_101316) do
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.string "activity_type"
@@ -69,6 +69,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_22_133620) do
     t.datetime "updated_at", null: false
     t.integer "organization_id"
     t.integer "user_id"
+    t.integer "value"
+    t.integer "priority"
+    t.integer "stage"
+    t.integer "contact_id"
+    t.string "category"
+    t.string "deal_type"
+    t.date "close_date"
     t.index ["organization_id"], name: "index_deals_on_organization_id"
     t.index ["user_id"], name: "index_deals_on_user_id"
   end
