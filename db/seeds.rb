@@ -13,7 +13,7 @@ stages = ["talking", "proposal sent", "signed", "closed"]
 deal_types = ["one-off", "retainer", "audit"]
 # create organizations
 5.times { Organization.create(name: Faker::TvShows::VentureBros.organization) }
-org = Organization.first.id
+org = Organization.first
 
 # create user to log in
 user = User.create(
@@ -64,28 +64,30 @@ end
     status: statuses.shuffle.first,
     notes: Faker::Lorem.paragraph,
     organization_id: org.id,
-    business: Business.shuffle.first
+    business_id: Business.all.shuffle.first.id
   )
 end
 
 # create deals
 10.times do 
-  Deal.create(
-    name: Faker::Marketing.buzzwords.captialize,
+  d = Deal.create(
+    name: Faker::Marketing.buzzwords.capitalize,
     source: Faker::Internet.url,
     rating: [1, 2, 3, 4, 5].shuffle.first,
     status: statuses.shuffle.first,
     notes: Faker::Lorem.paragraph,
-    organization: org,
-    user: User.shuffle.first,
+    organization_id: org.id,
+    user_id: User.all.shuffle.first.id,
     value: Faker::Number.positive(from: 500, to: 15000),
     priority: statuses.shuffle.first,
     stage: stages.shuffle.first,
-    contact_id: Contact.shuffle.first.id,
     deal_type: deal_types.shuffle.first,
     category: Faker::Company.industry,
-    close_date: Faker::Date.between(from: 90.days.ago, to: 90.days.later)
-
+    close_date: Faker::Date.between(from: 90.days.ago, to: 2.days.ago)
   )
+
+  d.update(contact_id: Contact.all.shuffle.first.id)
+  
+
 end
 
