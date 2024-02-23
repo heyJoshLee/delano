@@ -17,7 +17,7 @@ org = Organization.first
 
 # create user to log in
 user = User.create(
-  email: "email@email",
+  email: "email@email.com",
   password: "password",
   organization: org
 )
@@ -83,7 +83,8 @@ end
     stage: stages.shuffle.first,
     deal_type: deal_types.shuffle.first,
     category: Faker::Company.industry,
-    close_date: Faker::Date.between(from: 90.days.ago, to: 2.days.ago)
+    close_date: Faker::Date.between(from: 90.days.ago, to: 2.days.ago),
+    business_id: Business.all.shuffle.first.id
   )
 
   d.update(contact_id: Contact.all.shuffle.first.id)

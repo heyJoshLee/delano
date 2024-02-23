@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   
 
   def home
-    session[:user_id] = 1
   end
 
   def test

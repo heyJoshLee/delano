@@ -11,3 +11,6 @@ Then
 - email from app
 - auto emails from chat GPT
 - Get email from hunter api (check pricing)
+
+
+TODO: method to add up deal amounts

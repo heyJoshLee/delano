@@ -24,4 +24,5 @@
           %a.dropdown-item{:href => "#"} Display only bad deals
   .scrollbar.deals-items-container
     .w-100.min-vh-50{"data-sortable" => "data-sortable"}
-      = render "deal_preview"
+      - @deals.each do |deal|
+        = render "deal_preview", deal: deal
