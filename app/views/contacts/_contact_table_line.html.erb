@@ -1,0 +1,34 @@
+<%= puts contact %>
+<tr class="hover-actions-trigger btn-reveal-trigger position-static">
+<td class="fs-9 align-middle">
+  <div class="form-check mb-0 fs-8">
+    <input class="form-check-input" type="checkbox" data-bulk-select-row='{"customer":{"avatar":"/team/32.webp","name":"<%= contact.full_name %>","designation":"VP Accounting","status":{"label":"new lead","type":"badge-phoenix-primary"}},"email":"<%=contact.email%>","phone":"<%=contact.phone%>","contact":"Ally Aagaard","company":"Google.inc","date":"Jan 01, 12:56 PM"}' />
+  </div>
+</td>
+<td class="name align-middle white-space-nowrap ps-0">
+  <div class="d-flex align-items-center"><a href="<%= organization_contact_path(contact.organization, contact) %>">
+      <div class="avatar avatar-xl me-3"><img class="rounded-circle" src="../../assets/img/team/32.webp" alt="" />
+      </div>
+    </a>
+    <div><a class="fs-8 fw-bold" href="<%= organization_contact_path(contact.organization, contact) %>"><%= contact.full_name %></a>
+      <div class="d-flex align-items-center">
+        <p class="mb-0 text-body-highlight fw-semibold fs-9 me-2"><%= contact.title %></p><span class="badge badge-phoenix badge-phoenix-primary">new lead</span>
+      </div>
+    </div>
+  </div>
+</td>
+<td class="email align-middle white-space-nowrap fw-semibold ps-4 border-end border-translucent"><a class="text-body-highlight" href="mailto:<%=contact.email%>"><%=contact.email%></a></td>
+<td class="phone align-middle white-space-nowrap fw-semibold ps-4 border-end border-translucent"><a class="text-body-highlight" href="tel:<%=contact.phone%>"><%=contact.phone%></a></td>
+<td class="contact align-middle white-space-nowrap ps-4 border-end border-translucent fw-semibold text-body-highlight">Ally Aagaard</td>
+<td class="company align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4 border-end border-translucent fw-semibold text-body-highlight">Google.inc</td>
+<td class="date align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4 text-body-tertiary">Jan 01, 12:56 PM</td>
+<td class="align-middle white-space-nowrap text-end pe-0 ps-4">
+  <div class="btn-reveal-trigger position-static">
+    <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+    </div>
+  </div>
+</td>
+</tr>
+

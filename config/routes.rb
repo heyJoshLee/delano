@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
 
-
 resources :organizations do 
   resources :businesses
   resources :contacts

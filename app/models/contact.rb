@@ -5,4 +5,7 @@ class Contact < ApplicationRecord
   belongs_to :organization
   has_many :activities, as: :active
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -1,27 +1,308 @@
-<%= link_to 'Back to deals', organization_deals_path(@deal.organization) %>
+<div class="content">
+<nav class="mb-2" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
+    <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
+    <li class="breadcrumb-item active">Default</li>
+  </ol>
+</nav>
+<div class="pb-9">
+  <div class="row align-items-center justify-content-between g-3 mb-4">
+    <div class="col-12 col-md-auto">
+      <h2 class="mb-0">Deal details</h2>
+    </div>
+    <div class="col-12 col-md-auto d-flex"><button class="btn btn-phoenix-secondary px-3 px-sm-5 me-2"><span class="fa-solid fa-edit me-sm-2"></span><span class="d-none d-sm-inline">Edit		</span></button><button class="btn btn-phoenix-danger me-2"><span class="fa-solid fa-trash me-2"></span><span>Delete Deal</span></button>
+      <div><button class="btn px-3 btn-phoenix-secondary" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fa-solid fa-ellipsis"></span></button>
+        <ul class="dropdown-menu dropdown-menu-end p-0" style="z-index: 9999;">
+          <li><a class="dropdown-item" href="#!">View profile</a></li>
+          <li><a class="dropdown-item" href="#!">Report</a></li>
+          <li><a class="dropdown-item" href="#!">Manage notifications</a></li>
+          <li><a class="dropdown-item text-danger" href="#!">Delete Lead</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row g-4 g-xl-6">
+    <div class="col-xl-5 col-xxl-4">
+      <div class="sticky-leads-sidebar">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row align-items-center g-3">
+              <div class="col-12 col-sm-auto flex-1">
+                <h3 class="fw-bolder mb-2 line-clamp-1">Start-Up Growth Suite</h3>
+                <div class="d-flex align-items-center mb-4">
+                  <h5 class="mb-0 me-4">USD $12,000.00</h5>
+                  <h5 class="fw-semibold"><span class="d-inline-block lh-sm me-1" data-feather="grid" style="height:16px;width:16px;"></span><span class="d-inline-block lh-sm">Financial</span></h5>
+                </div>
+                <div class="d-md-flex d-xl-block align-items-center justify-content-between mb-5">
+                  <div class="d-flex align-items-center mb-3 mb-md-0 mb-xl-3">
+                    <div class="avatar avatar-xl me-3"><img class="rounded-circle" src="../../assets/img/team/72x72/58.webp" alt="" /></div>
+                    <div>
+                      <h5>Ansolo Lazinatov</h5>
+                      <div class="dropdown"><a class="text-body-secondary dropdown-toggle text-decoration-none dropdown-caret-none" href="#!" data-bs-toggle="dropdown" aria-expanded="false"> Owner<span class="fa-solid fa-caret-down text-body-secondary fs-9 ms-2"></span></a>
+                        <div class="dropdown-menu shadow-sm" style="min-width:20rem">
+                          <div class="card position-relative border-0">
+                            <div class="card-body p-0">
+                              <div class="mx-3">
+                                <h4 class="mb-3 fw-bold">Switch ownership</h4>
+                                <h5 class="mb-3">Deal Owner</h5><select class="form-select mb-3" aria-label="Default select">
+                                  <option selected="selected">Select</option>
+                                  <option value="1">Jerry Seinfield</option>
+                                  <option value="2">Anthoney Michael</option>
+                                  <option value="3">Ansolo Lazinatov</option>
+                                </select>
+                                <div class="text-end"><button class="btn btn-link text-danger" type="button">Cancel</button><button class="btn btn-sm btn-primary px-5" type="button">Save</button></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-phoenix badge-phoenix-success me-2">Success</span><span class="badge badge-phoenix badge-phoenix-danger me-2">Lost</span><span class="badge badge-phoenix badge-phoenix-secondary">Close</span></div>
+                </div>
+                <div class="progress mb-2" style="height:5px">
+                  <div class="progress-bar bg-primary-lighter" data-bs-theme="light" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="mb-0"> New</p>
+                  <div><span class="d-inline-block lh-sm me-1" data-feather="clock" style="height:16px;width:16px;"></span><span class="d-inline-block lh-sm"> Dec 15, 05:00AM</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <h1>
-    <%=@deal.name%>
-    <%= link_to 'Edit', edit_organization_deal_path(@deal.organization, @deal)%>
-  </h1>
+        <%= render "others_info_pane" %>
 
-  <strong class='border-bottom'>Name</strong>
-  <p><%=@deal.source%><p>
+      </div>
+    </div>
+    <div class="col-xl-7 col-xxl-8">
+      <div class="card mb-5">
+        <div class="card-body">
+          <div class="row g-4 g-xl-1 g-xxl-3 justify-content-between">
+            <div class="col-sm-auto">
+              <div class="d-sm-block d-inline-flex d-md-flex flex-xl-column flex-xxl-row align-items-center align-items-xl-start align-items-xxl-center">
+                <div class="d-flex bg-success-subtle rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0" style="width:32px; height:32px"><span class="text-success-dark" data-feather="dollar-sign" style="width:24px; height:24px"></span></div>
+                <div>
+                  <p class="fw-bold mb-1">Deal Amount</p>
+                  <h4 class="fw-bolder text-nowrap">$12,000.00</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-auto">
+              <div class="d-sm-block d-inline-flex d-md-flex flex-xl-column flex-xxl-row align-items-center align-items-xl-start align-items-xxl-center border-start-sm ps-sm-5 border-translucent">
+                <div class="d-flex bg-info-subtle rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0" style="width:32px; height:32px"><span class="text-info-dark" data-feather="code" style="width:24px; height:24px"></span></div>
+                <div>
+                  <p class="fw-bold mb-1">Deal Code</p>
+                  <h4 class="fw-bolder text-nowrap">PHO1234</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-auto">
+              <div class="d-sm-block d-inline-flex d-md-flex flex-xl-column flex-xxl-row align-items-center align-items-xl-start align-items-xxl-center border-start-sm ps-sm-5 border-translucent">
+                <div class="d-flex bg-primary-subtle rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0" style="width:32px; height:32px"><span class="text-primary-dark" data-feather="layout" style="width:24px; height:24px"></span></div>
+                <div>
+                  <p class="fw-bold mb-1">Deal Type</p>
+                  <h4 class="fw-bolder text-nowrap">New Business</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-xl-4 mb-7">
+        <div class="row mx-0 mx-sm-3 mx-lg-0 px-lg-0">
+          <div class="col-sm-12 col-xxl-6 border-bottom border-end-xxl border-translucent py-3">
+            <table class="w-100 table-stats table-stats">
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="d-flex bg-success-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-success-dark" data-feather="bar-chart-2" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Probability (%)</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <p class="ps-6 ps-sm-0 fw-semibold mb-0 mb-0 pb-3 pb-sm-0">12.5</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex bg-info-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-info-dark" data-feather="trending-up" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Revenue</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <p class="ps-6 ps-sm-0 fw-semibold mb-0">$1,500.00</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-12 col-xxl-6 border-bottom border-translucent py-3">
+            <table class="w-100 table-stats">
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="d-flex bg-primary-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-primary-dark" data-feather="phone" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Phone</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2"><a class="ps-6 ps-sm-0 fw-semibold mb-0 pb-3 pb-sm-0 text-body" href="tel:+11123456789">+11 123 456 789</a></td>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex bg-warning-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-warning-dark" data-feather="mail" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Email</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2"><a class="ps-6 ps-sm-0 fw-semibold mb-0 text-body" href="mailto:jacksonpol@email.com">jacksonpol@email.com</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-12 col-xxl-6 border-end-xxl border-bottom border-bottom-xxl-0 py-3 border-translucent">
+            <table class="w-100 table-stats">
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="d-flex bg-success-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-success-dark" data-feather="users" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Contact Name</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <div class="ps-6 ps-sm-0 fw-semibold mb-0 pb-3 pb-sm-0">Jackson Pollock</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex bg-info-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-info-dark" data-feather="edit" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Modified By</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <div class="ps-6 ps-sm-0 fw-semibold mb-0">Ansolo Lazinatov</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-12 col-xxl-6 py-3">
+            <table class="w-100 table-stats">
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-inline-flex align-items-center">
+                    <div class="d-flex bg-info-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-info-dark" data-feather="clock" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Create Date</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <div class="ps-6 ps-sm-0 fw-semibold mb-0 pb-3 pb-sm-0">Nov 30, 2022</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2">
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex bg-warning-subtle rounded-circle flex-center me-3" style="width:24px; height:24px"><span class="text-warning-dark" data-feather="clock" style="width:16px; height:16px"></span></div>
+                    <p class="fw-bold mb-0">Closing Date</p>
+                  </div>
+                </td>
+                <td class="py-2 d-none d-sm-block pe-sm-2">:</td>
+                <td class="py-2">
+                  <div class="ps-6 ps-sm-0 fw-semibold mb-0">Dec 15, 2022</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <ul class="nav nav-underline fs-9 deal-details scrollbar flex-nowrap w-100 pb-1 mb-6" id="myTab" role="tablist" style="overflow-y: hidden;">
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link active" id="activity-tab" data-bs-toggle="tab" href="#tab-activity" role="tab" aria-controls="tab-activity" aria-selected="false" tabindex="-1"> <span class="fa-solid fa-chart-line me-2 tab-icon-color"></span>Activity</a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="notes-tab" data-bs-toggle="tab" href="#tab-notes" role="tab" aria-controls="tab-notes" aria-selected="false" tabindex="-1"> <span class="fa-solid fa-clipboard me-2 tab-icon-color"></span>Notes</a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="meeting-tab" data-bs-toggle="tab" href="#tab-meeting" role="tab" aria-controls="tab-meeting" aria-selected="true"> <span class="fa-solid fa-video me-2 tab-icon-color"></span>Meeting</a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="task-tab" data-bs-toggle="tab" href="#tab-task" role="tab" aria-controls="tab-task" aria-selected="true"> <span class="fa-solid fa-square-check me-2 tab-icon-color"></span>Task</a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="call-tab" data-bs-toggle="tab" href="#tab-call" role="tab" aria-controls="tab-call" aria-selected="true"> <span class="fa-solid fa-phone me-2 tab-icon-color"></span>Call</a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="emails-tab" data-bs-toggle="tab" href="#tab-emails" role="tab" aria-controls="tab-emails" aria-selected="true"> <span class="fa-solid fa-envelope me-2 tab-icon-color"></span>Emails </a></li>
+        <li class="nav-item text-nowrap me-2" role="presentation"><a class="nav-link" id="attachments-tab" data-bs-toggle="tab" href="#tab-attachments" role="tab" aria-controls="tab-attachments" aria-selected="true"> <span class="fa-solid fa-paperclip me-2 tab-icon-color"></span>Attachments</a></li>
+      </ul>
 
-  <strong class='border-bottom'>Name</strong>
-  <p><%=@deal.rating%><p>
+      <%= render "tab_content" %>
 
-  <strong class='border-bottom'>Name</strong>
-  <p><%=@deal.status%><p>
 
-  <strong class='border-bottom'>Name</strong>
-  <p><%=@deal.notes%><p>
 
-  <%= render "activities/mini_form", active: @deal %>
-  
-  <h2>Activities<%= @deal.activities.count%></h2>
 
-  <% @deal.activities.each do |activity|  %>
-    <%= activity.title %>
-  <% end %>
- 
+
+    </div>
+  </div>
+</div>
+<footer class="footer position-absolute">
+  <div class="row g-0 justify-content-between align-items-center h-100">
+    <div class="col-12 col-sm-auto text-center">
+      <p class="mb-0 mt-2 mt-sm-0 text-body">Thank you for creating with Phoenix<span class="d-none d-sm-inline-block"></span><span class="d-none d-sm-inline-block mx-1">|</span><br class="d-sm-none" />2024 &copy;<a class="mx-1" href="https://themewagon.com">Themewagon</a></p>
+    </div>
+    <div class="col-12 col-sm-auto text-center">
+      <p class="mb-0 text-body-tertiary text-opacity-85">v1.15.0</p>
+    </div>
+  </div>
+</footer>
+</div>
+<div class="support-chat-container">
+<div class="container-fluid support-chat">
+  <div class="card bg-body-emphasis">
+    <div class="card-header d-flex flex-between-center px-4 py-3 border-bottom border-translucent">
+      <h5 class="mb-0 d-flex align-items-center gap-2">Demo widget<span class="fa-solid fa-circle text-success fs-11"></span></h5>
+      <div class="btn-reveal-trigger"><button class="btn btn-link p-0 dropdown-toggle dropdown-caret-none transition-none d-flex" type="button" id="support-chat-dropdown" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h text-body"></span></button>
+        <div class="dropdown-menu dropdown-menu-end py-2" aria-labelledby="support-chat-dropdown"><a class="dropdown-item" href="#!">Request a callback</a><a class="dropdown-item" href="#!">Search in chat</a><a class="dropdown-item" href="#!">Show history</a><a class="dropdown-item" href="#!">Report to Admin</a><a class="dropdown-item btn-support-chat" href="#!">Close Support</a></div>
+      </div>
+    </div>
+    <div class="card-body chat p-0">
+      <div class="d-flex flex-column-reverse scrollbar h-100 p-3">
+        <div class="text-end mt-6"><a class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3" href="#!">
+            <p class="mb-0 fw-semibold fs-9">I need help with something</p><span class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+          </a><a class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3" href="#!">
+            <p class="mb-0 fw-semibold fs-9">I can’t reorder a product I previously ordered</p><span class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+          </a><a class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3" href="#!">
+            <p class="mb-0 fw-semibold fs-9">How do I place an order?</p><span class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+          </a><a class="false d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3" href="#!">
+            <p class="mb-0 fw-semibold fs-9">My payment method not working</p><span class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+          </a></div>
+        <div class="text-center mt-auto">
+          <div class="avatar avatar-3xl status-online"><img class="rounded-circle border border-3 border-light-subtle" src="../../assets/img/team/30.webp" alt="" /></div>
+          <h5 class="mt-2 mb-3">Eric</h5>
+          <p class="text-center text-body-emphasis mb-0">Ask us anything – we’ll get back to you here or by email within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer d-flex align-items-center gap-2 border-top border-translucent ps-3 pe-4 py-3">
+      <div class="d-flex align-items-center flex-1 gap-3 border border-translucent rounded-pill px-4"><input class="form-control outline-none border-0 flex-1 fs-9 px-0" type="text" placeholder="Write message" /><label class="btn btn-link d-flex p-0 text-body-quaternary fs-9 border-0" for="supportChatPhotos"><span class="fa-solid fa-image"></span></label><input class="d-none" type="file" accept="image/*" id="supportChatPhotos" /><label class="btn btn-link d-flex p-0 text-body-quaternary fs-9 border-0" for="supportChatAttachment"> <span class="fa-solid fa-paperclip"></span></label><input class="d-none" type="file" id="supportChatAttachment" /></div><button class="btn p-0 border-0 send-btn"><span class="fa-solid fa-paper-plane fs-9"></span></button>
+    </div>
+  </div>
+</div><button class="btn p-0 border border-translucent btn-support-chat"><span class="fs-8 btn-text text-primary text-nowrap">Chat demo</span><span class="fa-solid fa-circle text-success fs-9 ms-2"></span><span class="fa-solid fa-chevron-down text-primary fs-7"></span></button>
+</div>
