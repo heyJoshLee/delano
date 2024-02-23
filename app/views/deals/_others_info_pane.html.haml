@@ -1,0 +1,49 @@
+.card
+  .card-body
+    %h4.mb-5 Others Information
+    .row.g-3
+      .col-12
+        .mb-4
+          .d-flex.flex-wrap.justify-content-between.mb-2
+            %h5.mb-0.text-body-highlight.me-2 Category
+            %a.fw-bold.fs-9{:href => "#!"} Add new category
+          %select.form-select.mb-3{"aria-label" => "category"}
+            %option{:value => "financial"} Financial
+            %option{:value => "marketplace"} Marketplace
+            %option{:value => "travel"} Travel
+            %option{:value => "e-commerce"} E-commerce
+            %option{:value => "cloud-computing"} Cloud Computing
+        .mb-4
+          %h5.mb-0.text-body-highlight.mb-2 Priority
+          %select.form-select.mb-3{"aria-label" => "priority"}
+            %option{:value => "low"} Low
+            %option{:value => "high"} High
+            %option{:value => "medium"} Medium
+            %option{:value => "urgent"} Urgent
+        .mb-4
+          %h5.mb-0.text-body-highlight.mb-2 Stage
+          %select.form-select.mb-3{"aria-label" => "stage"}
+            %option{:value => "new"} New
+            %option{:value => "in-progress"} In Progress
+            %option{:value => "pending"} Pending
+            %option{:value => "canceled"} Canceled
+            %option{:value => "completed"} Completed
+        .mb-4
+          .d-flex.flex-wrap.justify-content-between.mb-2
+            %h5.mb-0.text-body-highlight.me-2 Lead Source
+            %a.fw-bold.fs-9{:href => "#!"} Add new
+          %select.form-select.mb-3{"aria-label" => "lead-source"}
+            %option{:value => "referrals"} Referrals
+            %option{:value => "former_clients"} Former Clients
+            %option{:value => "competitors"} Competitors
+            %option{:value => "business_sales"} Business &amp; sales
+            %option{:value => "google_resources"} Google resources
+            %option{:value => "linkedin"} Linkedin
+            %option{:value => "marketing"} Marketing
+        %div
+          .d-flex.flex-wrap.justify-content-between.mb-2
+            %h5.mb-0.text-body-highlight.me-2 Campaign Source
+            %a.fw-bold.fs-9{:href => "#!"} Add new
+          %select.form-select{"aria-label" => "lead-source"}
+            %option{:value => "online_campaign"} Online Campaign
+            %option{:value => "offline_campaign"} Offline Campaign

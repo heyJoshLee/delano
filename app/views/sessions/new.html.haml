@@ -1,0 +1,8 @@
+.row
+  .col-4.offset-4.align-self-center.bg-white.p-4
+    %h1 Log In
+    = bootstrap_form_tag url: "/login" do |form|
+      = form.text_field :email, class: "border-secondary"
+      = form.password_field :password, class: "border-secondary"
+      = form.submit 'Log In', class: "btn btn-primary"
+      = link_to "Register", new_user_path

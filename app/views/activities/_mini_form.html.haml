@@ -1,0 +1,23 @@
+/ Button trigger modal
+%button.btn.btn-primary{"data-bs-target" => "#newActivity", "data-bs-toggle" => "modal", :type => "button"}
+  New Activity
+/ Modal
+#newActivity.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "newActivityLabel", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h1#newActivityLabel.modal-title.fs-5 New Activity
+        %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+      .modal-body
+        = bootstrap_form_for @activity || Activity.new do |form|
+          %div
+            = form.text_field :title
+            = form.select :activity_type, Organization::ACTIVITY_TYPE_OPTIONS, { class: "border border-secondary"}
+            = form.select :status, Organization::ACTIVITY_STATUS_OPTIONS, { class: "border border-secondary"}
+            = form.hidden_field :active_type, value: active.class.name
+            = form.hidden_field :active_id, value: active.id
+            = form.date_field :due_date
+      .modal-footer
+        %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"} Close
+        %div{"data-bs-dismiss" => "modal"}
+          = form.submit 'Save Activity', class: "btn btn-primary"

@@ -1,0 +1,104 @@
+.content.kanban-deals-content
+  %nav.mb-2.crm-deals-breadcrumb{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb.mb-0
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 1
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 2
+      %li.breadcrumb-item.active Default
+  %div
+    .px-4.px-lg-6
+      %h2.my-4 Deals
+      .d-xl-flex.justify-content-between
+        .mb-3
+          %button.btn.btn-primary.me-4{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-reference" => "parent", "data-bs-target" => "#addDealModal", "data-bs-toggle" => "modal", :type => "button"}
+            %span.fas.fa-plus.me-2>
+            Add Deal
+          %button.btn.btn-link.text-body.px-0
+            %span.fa-solid.fa-file-export.fs-9.me-2>
+            Export
+        .d-flex.mb-4
+          .search-box
+            %form.position-relative
+              %input.form-control.search-input.search{"aria-label" => "Search", :placeholder => "Search by name", :type => "search"}/
+              %span.fas.fa-search.search-box-icon
+          %select#select-deals.form-select.w-auto.mx-2
+            %option Deals
+          %button.btn.px-3.btn-phoenix-secondary{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-reference" => "parent", "data-bs-target" => "#reportsFilterModal", "data-bs-toggle" => "modal", :type => "button"}
+            %span.fa-solid.fa-filter.text-primary{"data-fa-transform" => "down-3"}
+    .px-4.px-lg-6.scrollbar{"data-kanban-container" => "data-kanban-container"}
+      .deals
+        = render "deal_preview_status_column"
+        = render "deal_preview_status_column"
+        = render "deal_preview_status_column"
+        = render "deal_preview_status_column"
+        = render "deal_preview_status_column"
+        .deals-col.position-relative
+          .d-flex.flex-center.flex-column.h-100
+            %h3.mb-4 Add new stage
+            %button.btn.btn-sm.btn-primary{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-reference" => "parent", "data-bs-target" => "#addStageModal", "data-bs-toggle" => "modal", :type => "button"}
+              %span.fa-solid.fa-plus.me-2>
+              New Stage
+  %footer.footer.position-absolute
+    .row.g-0.justify-content-between.align-items-center.h-100
+      .col-12.col-sm-auto.text-center
+        %p.mb-0.mt-2.mt-sm-0.text-body
+          Thank you for creating with Phoenix
+          %span.d-none.d-sm-inline-block
+          %span.d-none.d-sm-inline-block.mx-1 |
+          = succeed "2024" do
+            %br.d-sm-none/
+          %a.mx-1{:href => "https://themewagon.com"} Themewagon
+      .col-12.col-sm-auto.text-center
+        %p.mb-0.text-body-tertiary.text-opacity-85 v1.15.0
+.support-chat-container
+  .container-fluid.support-chat
+    .card.bg-body-emphasis
+      .card-header.d-flex.flex-between-center.px-4.py-3.border-bottom.border-translucent
+        %h5.mb-0.d-flex.align-items-center.gap-2
+          Demo widget
+          %span.fa-solid.fa-circle.text-success.fs-11
+        .btn-reveal-trigger
+          %button#support-chat-dropdown.btn.btn-link.p-0.dropdown-toggle.dropdown-caret-none.transition-none.d-flex{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-toggle" => "dropdown", :type => "button"}
+            %span.fas.fa-ellipsis-h.text-body
+          .dropdown-menu.dropdown-menu-end.py-2{"aria-labelledby" => "support-chat-dropdown"}
+            %a.dropdown-item{:href => "#!"} Request a callback
+            %a.dropdown-item{:href => "#!"} Search in chat
+            %a.dropdown-item{:href => "#!"} Show history
+            %a.dropdown-item{:href => "#!"} Report to Admin
+            %a.dropdown-item.btn-support-chat{:href => "#!"} Close Support
+      .card-body.chat.p-0
+        .d-flex.flex-column-reverse.scrollbar.h-100.p-3
+          .text-end.mt-6
+            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
+              %p.mb-0.fw-semibold.fs-9 I need help with something
+              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
+              %p.mb-0.fw-semibold.fs-9 I can’t reorder a product I previously ordered
+              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+            %a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
+              %p.mb-0.fw-semibold.fs-9 How do I place an order?
+              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+            %a.false.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3{:href => "#!"}
+              %p.mb-0.fw-semibold.fs-9 My payment method not working
+              %span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+          .text-center.mt-auto
+            .avatar.avatar-3xl.status-online
+              %img.rounded-circle.border.border-3.border-light-subtle{:alt => "", :src => "../../assets/img/team/30.webp"}/
+            %h5.mt-2.mb-3 Eric
+            %p.text-center.text-body-emphasis.mb-0 Ask us anything – we’ll get back to you here or by email within 24 hours.
+      .card-footer.d-flex.align-items-center.gap-2.border-top.border-translucent.ps-3.pe-4.py-3
+        .d-flex.align-items-center.flex-1.gap-3.border.border-translucent.rounded-pill.px-4
+          %input.form-control.outline-none.border-0.flex-1.fs-9.px-0{:placeholder => "Write message", :type => "text"}/
+          %label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0{:for => "supportChatPhotos"}
+            %span.fa-solid.fa-image
+          %input#supportChatPhotos.d-none{:accept => "image/*", :type => "file"}/
+          %label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0{:for => "supportChatAttachment"}
+            %span.fa-solid.fa-paperclip
+          %input#supportChatAttachment.d-none{:type => "file"}/
+        %button.btn.p-0.border-0.send-btn
+          %span.fa-solid.fa-paper-plane.fs-9
+  %button.btn.p-0.border.border-translucent.btn-support-chat
+    %span.fs-8.btn-text.text-primary.text-nowrap Chat demo
+    %span.fa-solid.fa-circle.text-success.fs-9.ms-2
+    %span.fa-solid.fa-chevron-down.text-primary.fs-7

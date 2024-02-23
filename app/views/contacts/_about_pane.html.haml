@@ -1,0 +1,50 @@
+.card.mb-3
+  .card-body
+    .d-flex.align-items-center.mb-5
+      %h3 About lead
+      %button.btn.btn-link.px-3{:type => "button"} Edit
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-envelope-alt
+        %h5.text-body-highlight.mb-0 Email
+      %a{:href => "mailto:#{contact.email}"}= contact.email
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-phone
+        %h5.text-body-highlight.mb-0 Phone
+      %a{:href => "tel:+1234567890"} +1234567890
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-globe
+        %h5.text-body-highlight.mb-0 Website
+      %a{:href => "#!"} ADD WEBSITE
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-building
+        %h5.text-body-highlight.mb-0 Industry
+      %p.mb-0.text-body-secondary Large Enterprise
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-postcard
+        %h5.text-body-highlight.mb-0 Number of employees
+      %p.mb-0.text-body-secondary 126
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-dollar-alt
+        %h5.text-body-highlight.mb-0 Annual Revenue
+      %p.mb-0.text-body-secondary $12000
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-clock
+        %h5.text-body-highlight.mb-0 Last contacted
+      %p.mb-0.text-body-secondary 12 November 2021, 10:54 AM
+    .mb-4
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-file-check-alt
+        %h5.text-body-highlight.mb-0 Lead source
+      %p.mb-0.text-body-secondary Advertisement
+    %div
+      .d-flex.align-items-center.mb-1
+        %span.me-2.uil.uil-check-circle
+        %h5.text-body-highlight.mb-0 Lead status
+      %span.badge.badge-phoenix.badge-phoenix-primary New Lead

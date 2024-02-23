@@ -1,0 +1,27 @@
+.deals-col.me-4
+  .d-flex.align-items-center.justify-content-between.position-sticky.top-0.z-1.bg-body
+    %div
+      %h5.mb-2 New
+      %p.fs-9.text-body-tertiary.mb-1 Forecast Revenue:
+      %h4.mb-3 $37,000.00
+    .d-flex.gap-3
+      %button.btn.p-0{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-reference" => "parent", "data-bs-target" => "#addDealModal", "data-bs-toggle" => "modal", :type => "button"}
+        %span.fa-solid.fa-plus
+      %button.btn.p-0{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-toggle" => "dropdown", :type => "button"}
+        %span.fas.fa-ellipsis-h.fs-10
+      %ul.dropdown-menu.dropdown-menu-end
+        %li
+          %a.dropdown-item{:href => "#"} Edit
+        %li
+          %a.dropdown-item{:href => "#"} Add meeting
+        %li
+          %a.dropdown-item{:href => "#"} See all connected contacts
+        %li
+          %a.dropdown-item{:href => "#"} Clone
+        %li
+          %a.dropdown-item{:href => "#"} Delete
+        %li
+          %a.dropdown-item{:href => "#"} Display only bad deals
+  .scrollbar.deals-items-container
+    .w-100.min-vh-50{"data-sortable" => "data-sortable"}
+      = render "deal_preview"

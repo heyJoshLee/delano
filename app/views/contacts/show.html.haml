@@ -1,0 +1,74 @@
+.content
+  %nav.mb-2{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb.mb-0
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 1
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 2
+      %li.breadcrumb-item.active Default
+  .pb-9
+    .row
+      .col-12
+        .row.align-items-center.justify-content-between.g-3.mb-3
+          .col-12.col-md-auto
+            %h2.mb-0 Lead details
+          .col-12.col-md-auto
+            .d-flex
+              .flex-1.d-md-none
+                %button.btn.px-3.btn-phoenix-secondary.text-body-tertiary.me-2{"data-phoenix-target" => "#productFilterColumn", "data-phoenix-toggle" => "offcanvas"}
+                  %span.fa-solid.fa-bars
+              %button.btn.btn-primary.me-2
+                %span.fa-solid.fa-envelope.me-2
+                %span Send an email
+              %button.btn.btn-phoenix-secondary.px-3.px-sm-5.me-2
+                %span.fa-solid.fa-thumbtack.me-sm-2
+                %span.d-none.d-sm-inline Shortlist
+              %button.btn.px-3.btn-phoenix-secondary{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-toggle" => "dropdown", :type => "button"}
+                %span.fa-solid.fa-ellipsis
+              %ul.dropdown-menu.dropdown-menu-end.p-0{:style => "z-index: 9999;"}
+                %li
+                  %a.dropdown-item{:href => "#!"} View profile
+                %li
+                  %a.dropdown-item{:href => "#!"} Report
+                %li
+                  %a.dropdown-item{:href => "#!"} Manage notifications
+                %li
+                  %a.dropdown-item.text-danger{:href => "#!"} Delete Lead
+    .row.g-0.g-md-4.g-xl-6
+      .col-md-5.col-lg-5.col-xl-4
+        .sticky-leads-sidebar
+          #productFilterColumn.lead-details-offcanvas.bg-body.scrollbar.phoenix-offcanvas.phoenix-offcanvas-fixed
+            .d-flex.justify-content-between.align-items-center.mb-2.d-md-none
+              %h3.mb-0 Lead Details
+              %button.btn.p-0{"data-phoenix-dismiss" => "offcanvas"}
+                %span.uil.uil-times.fs-7
+            .card.mb-3
+              .card-body
+                .row.align-items-center.g-3.text-center.text-xxl-start
+                  .col-12.col-xxl-auto
+                    .avatar.avatar-5xl
+                      %img.rounded-circle{:alt => "", :src => "../../assets/img/team/33.webp"}/
+                  .col-12.col-sm-auto.flex-1
+                    %h3.fw-bolder.mb-2= @contact.full_name
+                    %p.mb-0 Chief tech officer,
+                    %a.fw-bold{:href => "#!"} Blue Beetles
+            = render "about_pane", contact: @contact
+            = render "address_pane"
+          .phoenix-offcanvas-backdrop.d-lg-none.top-0{"data-phoenix-backdrop" => "data-phoenix-backdrop"}
+      .col-md-7.col-lg-7.col-xl-8
+        .lead-details-container
+          %nav#navbar-deals-detail.navbar.pb-4.px-0.sticky-top.bg-body.nav-underline-scrollspy
+            %ul.nav.nav-underline.fs-9
+              %li.nav-item
+                %a.nav-link.me-2{:href => "#scrollspyTask"} Task
+              %li.nav-item
+                %a.nav-link.me-2{:href => "#scrollspyDeals"} Deals
+              %li.nav-item
+                %a.nav-link.me-2{:href => "#scrollspyEmails"} Emails
+              %li.nav-item
+                %a.nav-link{:href => "#scrollspyAttachments"} Attachments
+          .scrollspy-example.rounded-2{"data-bs-offset" => "0", "data-bs-root-margin" => "0px 0px -40%", "data-bs-smooth-scroll" => "true", "data-bs-spy" => "scroll", "data-bs-target" => "#navbar-deals-detail", :tabindex => "0"}
+            = render "tasks"
+            = render "deals"
+            = render "emails"
+            = render "attachments"

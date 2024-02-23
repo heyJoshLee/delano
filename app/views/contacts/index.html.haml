@@ -1,0 +1,128 @@
+.content
+  %nav.mb-2{"aria-label" => "breadcrumb"}
+    %ol.breadcrumb.mb-0
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 1
+      %li.breadcrumb-item
+        %a{:href => "#!"} Page 2
+      %li.breadcrumb-item.active Default
+  .pb-6
+    %h2.mb-4 25 Leads
+    #lealsTable{"data-list" => "{\"valueNames\":[\"name\",\"email\",\"phone\",\"contact\",\"company\",\"date\"],\"page\":10,\"pagination\":true}"}
+      .row.g-3.justify-content-between.mb-4
+        .col-auto
+          .d-md-flex.justify-content-between
+            %div
+              %button.btn.btn-primary.me-4
+                %span.fas.fa-plus.me-2>
+                Create Lead
+              %button.btn.btn-link.text-body.px-0
+                %span.fa-solid.fa-file-export.fs-9.me-2>
+                Export
+        .col-auto
+          .d-flex
+            .search-box.me-2
+              %form.position-relative
+                %input.form-control.search-input.search{"aria-label" => "Search", :placeholder => "Search by name", :type => "search"}/
+                %span.fas.fa-search.search-box-icon
+            .flatpickr-input-container.me-2
+              %input#datepicker.form-control.ps-6.datetimepicker{"data-options" => "{\"dateFormat\":\"M j, Y\",\"disableMobile\":true,\"defaultDate\":\"Mar 1, 2022\"}", :type => "text"}/
+              %span.uil.uil-calendar-alt.flatpickr-icon.text-body-tertiary
+            %button.btn.px-3.btn-phoenix-secondary{"aria-expanded" => "false", "aria-haspopup" => "true", "data-boundary" => "window", "data-bs-reference" => "parent", "data-bs-target" => "#filterModal", "data-bs-toggle" => "modal", :type => "button"}
+              %span.fa-solid.fa-filter.text-primary{"data-fa-transform" => "down-3"}
+            #filterModal.modal.fade{:tabindex => "-1"}
+              .modal-dialog.modal-dialog-centered
+                .modal-content.border.border-translucent
+                  %form#addEventForm{:autocomplete => "off"}
+                    .modal-header.border-translucent.p-4
+                      %h5.modal-title.text-body-highlight.fs-6.lh-sm Filter
+                      %button.btn.p-1.text-body{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+                        %span.fas.fa-times.fs-9
+                    .modal-body.pt-4.pb-2.px-4
+                      .mb-3
+                        %label.fw-bold.mb-2.text-body-highlight{:for => "leadStatus"} Lead Status
+                        %select#leadStatus.form-select
+                          %option{:selected => "selected", :value => "newLead"} New Lead
+                          %option{:value => "coldLead"} Cold Lead
+                          %option{:value => "wonLead"} Won Lead
+                          %option{:value => "canceled"} Canceled
+                      .mb-3
+                        %label.fw-bold.mb-2.text-body-highlight{:for => "createDate"} Create Date
+                        %select#createDate.form-select
+                          %option{:selected => "selected", :value => "today"} Today
+                          %option{:value => "last7Days"} Last 7 Days
+                          %option{:value => "last30Days"} Last 30 Days
+                          %option{:value => "chooseATimePeriod"} Choose a time period
+                      .mb-3
+                        %label.fw-bold.mb-2.text-body-highlight{:for => "designation"} Designation
+                        %select#designation.form-select
+                          %option{:selected => "selected", :value => "VPAccounting"} VP Accounting
+                          %option{:value => "ceo"} CEO
+                          %option{:value => "creativeDirector"} Creative Director
+                          %option{:value => "accountant"} Accountant
+                          %option{:value => "executiveManager"} Executive Manager
+                    .modal-footer.d-flex.justify-content-end.align-items-center.px-4.pb-4.border-0.pt-3
+                      %button.btn.btn-sm.btn-phoenix-primary.px-4.fs-10.my-0{:type => "submit"}
+                        %span.fas.fa-arrows-rotate.me-2.fs-10>
+                        Reset
+                      %button.btn.btn-sm.btn-primary.px-9.fs-10.my-0{:type => "submit"} Done
+      .table-responsive.scrollbar.mx-n1.px-1
+        %table.table.fs-9.mb-0.leads-table.border-top.border-translucent
+          %thead
+            %tr
+              %th.white-space-nowrap.fs-9.align-middle.ps-0{:style => "max-width:20px; width:18px;"}
+                .form-check.mb-0.fs-8
+                  %input.form-check-input{"data-bulk-select" => "{\"body\":\"leal-tables-body\"}", :type => "checkbox"}/
+              %th.sort.white-space-nowrap.align-middle.text-uppercase.ps-0{"data-sort" => "name", :scope => "col", :style => "width:25%;"} Name
+              %th.sort.align-middle.ps-4.pe-5.text-uppercase.border-end.border-translucent{"data-sort" => "email", :scope => "col", :style => "width:15%;"}
+                .d-inline-flex.flex-center
+                  .d-flex.align-items-center.px-1.py-1.bg-success-subtle.rounded.me-2
+                    %span.text-success-dark{"data-feather" => "mail"}
+                  %span Email
+              %th.sort.align-middle.ps-4.pe-5.text-uppercase.border-end.border-translucent{"data-sort" => "phone", :scope => "col", :style => "width:15%; min-width: 180px;"}
+                .d-inline-flex.flex-center
+                  .d-flex.align-items-center.px-1.py-1.bg-primary-subtle.rounded.me-2
+                    %span.text-primary-dark{"data-feather" => "phone"}
+                  %span Phone
+              %th.sort.align-middle.ps-4.pe-5.text-uppercase.border-end.border-translucent{"data-sort" => "contact", :scope => "col", :style => "width:15%;"}
+                .d-inline-flex.flex-center
+                  .d-flex.align-items-center.px-1.py-1.bg-info-subtle.rounded.me-2
+                    %span.text-info-dark{"data-feather" => "user"}
+                  %span Contact name
+              %th.sort.align-middle.ps-4.pe-5.text-uppercase.border-end.border-translucent{"data-sort" => "company", :scope => "col", :style => "width:15%;"}
+                .d-inline-flex.flex-center
+                  .d-flex.align-items-center.px-1.py-1.bg-warning-subtle.rounded.me-2
+                    %span.text-warning-dark{"data-feather" => "grid"}
+                  %span Company name
+              %th.sort.align-middle.ps-4.pe-5.text-uppercase{"data-sort" => "date", :scope => "col", :style => "width:15%;"} Create date
+              %th.sort.text-end.align-middle.pe-0.ps-4{:scope => "col"}
+          %tbody#leal-tables-body.list
+            - @contacts.each do |contact|
+              = render "contact_table_line", contact: contact
+      .row.align-items-center.justify-content-end.py-4.pe-0.fs-9
+        .col-auto.d-flex
+          %p.mb-0.d-none.d-sm-block.me-3.fw-semibold.text-body{"data-list-info" => "data-list-info"}
+          %a.fw-semibold{"data-list-view" => "*", :href => "#!"}
+            View all
+            %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+          %a.fw-semibold.d-none{"data-list-view" => "less", :href => "#!"}
+            View Less
+            %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+        .col-auto.d-flex
+          %button.page-link{"data-list-pagination" => "prev"}
+            %span.fas.fa-chevron-left
+          %ul.mb-0.pagination
+          %button.page-link.pe-0{"data-list-pagination" => "next"}
+            %span.fas.fa-chevron-right
+  %footer.footer.position-absolute
+    .row.g-0.justify-content-between.align-items-center.h-100
+      .col-12.col-sm-auto.text-center
+        %p.mb-0.mt-2.mt-sm-0.text-body
+          Thank you for creating with Phoenix
+          %span.d-none.d-sm-inline-block
+          %span.d-none.d-sm-inline-block.mx-1 |
+          = succeed "2024" do
+            %br.d-sm-none/
+          %a.mx-1{:href => "https://themewagon.com"} Themewagon
+      .col-12.col-sm-auto.text-center
+        %p.mb-0.text-body-tertiary.text-opacity-85 v1.15.0

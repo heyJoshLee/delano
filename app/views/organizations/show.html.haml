@@ -1,0 +1,13 @@
+= link_to 'Back to organizations', organization_path
+= bootstrap_form_for @organization do |form|
+  %h1
+    = @organization.name
+    = link_to 'Edit', edit_organization_path(@organization)
+  %strong.border-bottom Name
+  %p= @organization.name
+  %p
+= render "activities/mini_form", active: @organization
+%h2
+  Activities#{@organization.activities.count}
+- @organization.activities.each do |activity|
+  = activity.title

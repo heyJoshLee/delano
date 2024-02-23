@@ -1,0 +1,334 @@
+.mb-8
+  %h2#scrollspyEmails.mb-2 Emails
+  %div
+    .scrollbar
+      %ul#emailTab.nav.nav-underline.fs-9.flex-nowrap.mb-1{:role => "tablist"}
+        %li.nav-item.me-3
+          %a#mail-tab.nav-link.text-nowrap.border-0.active{"aria-controls" => "mail-tab", "aria-selected" => "true", "data-bs-toggle" => "tab", :href => "#tab-mail", :role => "tab"}
+            Mails (68)
+            %span.text-body-tertiary.fw-normal
+        %li.nav-item.me-3
+          %a#drafts-tab.nav-link.text-nowrap.border-0{"aria-controls" => "drafts-tab", "aria-selected" => "true", "data-bs-toggle" => "tab", :href => "#tab-drafts", :role => "tab"}
+            Drafts (6)
+            %span.text-body-tertiary.fw-normal
+        %li.nav-item.me-3
+          %a#schedule-tab.nav-link.text-nowrap.border-0{"aria-controls" => "schedule-tab", "aria-selected" => "true", "data-bs-toggle" => "tab", :href => "#tab-schedule", :role => "tab"} Scheduled (17)
+    .search-box.w-100.mb-3
+      %form.position-relative
+        %input.form-control.search-input.search{"aria-label" => "Search", :placeholder => "Search...", :type => "search"}/
+        %span.fas.fa-search.search-box-icon
+    #profileTabContent.tab-content
+      #tab-mail.tab-pane.fade.show.active{"aria-labelledby" => "mail-tab", :role => "tabpanel"}
+        #allEmailsTable.border-top.border-bottom.border-translucent{"data-list" => "{\"valueNames\":[\"subject\",\"sent\",\"date\",\"source\",\"status\"],\"page\":7,\"pagination\":true}"}
+          .table-responsive.scrollbar.mx-n1.px-1
+            %table.table.fs-9.mb-0
+              %thead
+                %tr
+                  %th.white-space-nowrap.fs-9.align-middle.ps-0{:style => "width:26px;"}
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select" => "{\"body\":\"all-email-table-body\"}", :type => "checkbox"}/
+                  %th.sort.white-space-nowrap.align-middle.pe-3.ps-0.text-uppercase{"data-sort" => "subject", :scope => "col", :style => "width:31%; min-width:350px"} Subject
+                  %th.sort.align-middle.pe-3.text-uppercase{"data-sort" => "sent", :scope => "col", :style => "width:15%; min-width:130px"} Sent by
+                  %th.sort.align-middle.text-start.text-uppercase{"data-sort" => "date", :scope => "col", :style => "min-width:165px"} Date
+                  %th.sort.align-middle.pe-0.text-uppercase{:scope => "col", :style => "width:15%; min-width:100px"} Action
+                  %th.sort.align-middle.text-end.text-uppercase{"data-sort" => "status", :scope => "col", :style => "width:15%; min-width:100px"} Status
+              %tbody#all-email-table-body.list
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"Quary about purchased soccer socks\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 29, 2021 10:23 am\",\"source\":\"Call\",\"type_status\":{\"label\":\"sent\",\"type\":\"badge-phoenix-success\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} Quary about purchased soccer socks
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 29, 2021 10:23 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-success sent
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"How to take the headache out of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 27, 2021 3:27 pm","source":"Call","type_status":{"label":"delivered","type":"badge-phoenix-info"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} How to take the headache out of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 27, 2021 3:27 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-info delivered
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"The Arnold Schwarzenegger of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 24, 2021 10:44 am","source":"Call","type_status":{"label":"Bounce","type":"badge-phoenix-warning"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} The Arnold Schwarzenegger of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 24, 2021 10:44 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-warning Bounce
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"My order is not being taken\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 4:55 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"Spam\",\"type\":\"badge-phoenix-danger\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} My order is not being taken
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 4:55 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-danger Spam
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"Shipment is missing\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 2:43 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"sent\",\"type\":\"badge-phoenix-success\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} Shipment is missing
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 2:43 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-success sent
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"How can I order something urgently?\",\"email\":\"ansolo45@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 2:43 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"Delivered\",\"type\":\"badge-phoenix-info\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} How can I order something urgently?
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 2:43 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-info Delivered
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"How the delicacy of the products will be handled?","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 16, 2021 5:18 pm","source":"Call","type_status":{"label":"bounced","type":"badge-phoenix-warning"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} How the delicacy of the products will be handled?
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 16, 2021 5:18 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-warning bounced
+          .row.align-items-center.justify-content-between.py-2.pe-0.fs-9
+            .col-auto.d-flex
+              %p.mb-0.d-none.d-sm-block.me-3.fw-semibold.text-body{"data-list-info" => "data-list-info"}
+              %a.fw-semibold{"data-list-view" => "*", :href => "#!"}
+                View all
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+              %a.fw-semibold.d-none{"data-list-view" => "less", :href => "#!"}
+                View Less
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+            .col-auto.d-flex
+              %button.page-link{"data-list-pagination" => "prev"}
+                %span.fas.fa-chevron-left
+              %ul.mb-0.pagination
+              %button.page-link.pe-0{"data-list-pagination" => "next"}
+                %span.fas.fa-chevron-right
+      #tab-drafts.tab-pane.fade{"aria-labelledby" => "drafts-tab", :role => "tabpanel"}
+        #draftsEmailsTable.border-top.border-bottom.border-translucent{"data-list" => "{\"valueNames\":[\"subject\",\"sent\",\"date\",\"source\",\"status\"],\"page\":7,\"pagination\":true}"}
+          .table-responsive.scrollbar.mx-n1.px-1
+            %table.table.fs-9.mb-0
+              %thead
+                %tr
+                  %th.white-space-nowrap.fs-9.align-middle.ps-0{:style => "width:26px;"}
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select" => "{\"body\":\"drafts-email-table-body\"}", :type => "checkbox"}/
+                  %th.sort.white-space-nowrap.align-middle.pe-3.ps-0.text-uppercase{"data-sort" => "subject", :scope => "col", :style => "width:31%; min-width:350px"} Subject
+                  %th.sort.align-middle.pe-3.text-uppercase{"data-sort" => "sent", :scope => "col", :style => "width:15%; min-width:130px"} Sent by
+                  %th.sort.align-middle.text-start.text-uppercase{"data-sort" => "date", :scope => "col", :style => "min-width:165px"} Date
+                  %th.sort.align-middle.pe-0.text-uppercase{:scope => "col", :style => "width:15%; min-width:100px"} Action
+                  %th.sort.align-middle.text-end.text-uppercase{"data-sort" => "status", :scope => "col", :style => "width:15%; min-width:100px"} Status
+              %tbody#drafts-email-table-body.list
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"Quary about purchased soccer socks\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 29, 2021 10:23 am\",\"source\":\"Call\",\"type_status\":{\"label\":\"sent\",\"type\":\"badge-phoenix-success\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} Quary about purchased soccer socks
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 29, 2021 10:23 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-success sent
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"How to take the headache out of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 27, 2021 3:27 pm","source":"Call","type_status":{"label":"delivered","type":"badge-phoenix-info"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} How to take the headache out of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 27, 2021 3:27 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-info delivered
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"The Arnold Schwarzenegger of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 24, 2021 10:44 am","source":"Call","type_status":{"label":"Bounce","type":"badge-phoenix-warning"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} The Arnold Schwarzenegger of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 24, 2021 10:44 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-warning Bounce
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"My order is not being taken\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 4:55 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"Spam\",\"type\":\"badge-phoenix-danger\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} My order is not being taken
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 4:55 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-danger Spam
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"Shipment is missing\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 2:43 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"sent\",\"type\":\"badge-phoenix-success\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} Shipment is missing
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 2:43 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-success sent
+          .row.align-items-center.justify-content-between.py-2.pe-0.fs-9
+            .col-auto.d-flex
+              %p.mb-0.d-none.d-sm-block.me-3.fw-semibold.text-body{"data-list-info" => "data-list-info"}
+              %a.fw-semibold{"data-list-view" => "*", :href => "#!"}
+                View all
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+              %a.fw-semibold.d-none{"data-list-view" => "less", :href => "#!"}
+                View Less
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+            .col-auto.d-flex
+              %button.page-link{"data-list-pagination" => "prev"}
+                %span.fas.fa-chevron-left
+              %ul.mb-0.pagination
+              %button.page-link.pe-0{"data-list-pagination" => "next"}
+                %span.fas.fa-chevron-right
+      #tab-schedule.tab-pane.fade{"aria-labelledby" => "schedule-tab", :role => "tabpanel"}
+        #scheduledEmailsTable.border-top.border-bottom.border-translucent{"data-list" => "{\"valueNames\":[\"subject\",\"sent\",\"date\",\"source\",\"status\"],\"page\":7,\"pagination\":true}"}
+          .table-responsive.scrollbar.mx-n1.px-1
+            %table.table.fs-9.mb-0
+              %thead
+                %tr
+                  %th.white-space-nowrap.fs-9.align-middle.ps-0{:style => "width:26px;"}
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select" => "{\"body\":\"scheduled-email-table-body\"}", :type => "checkbox"}/
+                  %th.sort.white-space-nowrap.align-middle.pe-3.ps-0.text-uppercase{"data-sort" => "subject", :scope => "col", :style => "width:31%; min-width:350px"} Subject
+                  %th.sort.align-middle.pe-3.text-uppercase{"data-sort" => "sent", :scope => "col", :style => "width:15%; min-width:130px"} Sent by
+                  %th.sort.align-middle.text-start.text-uppercase{"data-sort" => "date", :scope => "col", :style => "min-width:165px"} Date
+                  %th.sort.align-middle.pe-0.text-uppercase{:scope => "col", :style => "width:15%; min-width:100px"} Action
+                  %th.sort.align-middle.text-end.text-uppercase{"data-sort" => "status", :scope => "col", :style => "width:15%; min-width:100px"} Status
+              %tbody#scheduled-email-table-body.list
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"Quary about purchased soccer socks\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 29, 2021 10:23 am\",\"source\":\"Call\",\"type_status\":{\"label\":\"sent\",\"type\":\"badge-phoenix-success\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} Quary about purchased soccer socks
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 29, 2021 10:23 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-success sent
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"How to take the headache out of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 27, 2021 3:27 pm","source":"Call","type_status":{"label":"delivered","type":"badge-phoenix-info"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} How to take the headache out of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 27, 2021 3:27 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-info delivered
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      //%input.form-check-input{"data-bulk-select-row" => "{"mail":{"subject":"The Arnold Schwarzenegger of Order","email":"ansolo45@mail.com"},"active":true,"sent":"#{@contact.full_name}","date":"Dec 24, 2021 10:44 am","source":"Call","type_status":{"label":"Bounce","type":"badge-phoenix-warning"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} The Arnold Schwarzenegger of Order
+                    .fs-10.d-block ansolo45@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2= @contact.full_name
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 24, 2021 10:44 am
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-warning Bounce
+                %tr.hover-actions-trigger.btn-reveal-trigger.position-static
+                  %td.fs-9.align-middle.px-0.py-3
+                    .form-check.mb-0.fs-8
+                      %input.form-check-input{"data-bulk-select-row" => "{\"mail\":{\"subject\":\"My order is not being taken\",\"email\":\"jackson@mail.com\"},\"active\":true,\"sent\":\"Jackson Pollock\",\"date\":\"Dec 19, 2021 4:55 pm\",\"source\":\"Call\",\"type_status\":{\"label\":\"Spam\",\"type\":\"badge-phoenix-danger\"}}", :type => "checkbox"}/
+                  %td.subject.order.align-middle.white-space-nowrap.py-2.ps-0
+                    %a.fw-semibold.text-primary{:href => "#!"} My order is not being taken
+                    .fs-10.d-block jackson@mail.com
+                  %td.sent.align-middle.white-space-nowrap.text-start.fw-bold.text-body-tertiary.py-2 Jackson Pollock
+                  %td.date.align-middle.white-space-nowrap.text-body.py-2 Dec 19, 2021 4:55 pm
+                  %td.align-middle.white-space-nowrap.ps-3
+                    %span.fa-solid.fa-phone.text-primary.me-2>
+                    Call
+                  %td.status.align-middle.fw-semibold.text-end.py-2
+                    %span.badge.badge-phoenix.fs-10.badge-phoenix-danger Spam
+          .row.align-items-center.justify-content-between.py-2.pe-0.fs-9
+            .col-auto.d-flex
+              %p.mb-0.d-none.d-sm-block.me-3.fw-semibold.text-body{"data-list-info" => "data-list-info"}
+              %a.fw-semibold{"data-list-view" => "*", :href => "#!"}
+                View all
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+              %a.fw-semibold.d-none{"data-list-view" => "less", :href => "#!"}
+                View Less
+                %span.fas.fa-angle-right.ms-1{"data-fa-transform" => "down-1"}
+            .col-auto.d-flex
+              %button.page-link{"data-list-pagination" => "prev"}
+                %span.fas.fa-chevron-left
+              %ul.mb-0.pagination
+              %button.page-link.pe-0{"data-list-pagination" => "next"}
+                %span.fas.fa-chevron-right

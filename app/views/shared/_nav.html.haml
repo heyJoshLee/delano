@@ -1,0 +1,19 @@
+.col.bg-primary.vh-100
+  %ul.nav.flex-column
+    %li.nav-item
+      = link_to "Log In", new_user_path, class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Deals", organization_deals_path(Current.user.organization), class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Organizations", organizations_path, class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Businesses", organization_businesses_path(Current.user.organization), class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Contacts", organization_contacts_path(Current.user.organization), class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Activities", activities_path, class: "nav-link text-white"
+    %li.nav-item
+      = link_to "Log out", "/logout", class: "nav-link text-white"
+    %div
+      %p= Current.user.email
+      %p= Current.user.organization.name

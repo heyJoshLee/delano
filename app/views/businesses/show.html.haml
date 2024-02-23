@@ -1,0 +1,12 @@
+= link_to 'Back to businessses', organization_businesses_path(@business.organization)
+%h1
+  = @business.name
+  = link_to 'Edit', edit_organization_business_path(@business.organization, @business)
+%strong.border-bottom Name
+%p= @business.name
+%p
+  = render "activities/mini_form", active: @business
+%h2
+  Activities#{@business.activities.count}
+- @business.activities.each do |activity|
+  = activity.title

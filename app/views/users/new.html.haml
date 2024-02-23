@@ -1,0 +1,5 @@
+.row
+  .col-4.offset-4.align-self-center.bg-white.p-4
+    %h1 Register
+    = link_to "Log in", new_session_path
+    = render 'form', user: @user

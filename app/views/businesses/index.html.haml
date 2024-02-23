@@ -1,0 +1,8 @@
+%h1 Businesses
+= link_to new_organization_business_path(Current.user.organization) do
+  %button.btn.btn-primary.btn-sm{:type => "button"} New business
+%ul.list-group
+  - @businessses.each do |business|
+    %li.list-group-item
+      = link_to organization_business_path(Current.user.organization, business) do
+        = business.name

@@ -1,0 +1,8 @@
+%h1 Organizations
+= link_to new_organization_path do
+  %button.btn.btn-primary.btn-sm{:type => "button"} New Organization
+%ul.list-group
+  - @organizations.each do |organization|
+    %li.list-group-item
+      = link_to organization_path(organization) do
+        = organization.name
