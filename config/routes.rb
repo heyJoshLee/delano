@@ -12,10 +12,10 @@ resources :organizations do
 end
 
 
-  resources :users
-  resources :sessions
-  resources :activities
-  post "/login", to: "sessions#create"
-  get "/logout", to: "sessions#destroy"
+resources :users
+resources :sessions
+resources :activities
+post "/login", to: "sessions#create"
+get "/logout", to: "sessions#destroy"
 
 end

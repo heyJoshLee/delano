@@ -6,7 +6,7 @@ ruby "3.0.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 gem "bootstrap_form", "~> 5.4"
-gem 'bootstrap', '~> 5.3.2'
+# gem 'bootstrap', '~> 5.3.2'
 gem "bootstrap-sass"
 gem "haml"
 gem "faker"
@@ -77,5 +77,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'rspec-rails', '~> 6.1.0'
+  gem 'database_cleaner-active_record'
 
 end
