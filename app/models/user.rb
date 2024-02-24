@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: true, length: { minimum: 5, maximum: 50}
+  validates :password, presence: true, length: { minimum: 5, maximum: 20}
   belongs_to :organization
   has_many :deals
   has_many :activities, as: :active

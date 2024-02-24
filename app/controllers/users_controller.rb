@@ -8,12 +8,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     @user.organization = Organization.create(name: "auto generated") # TODO: Update user / org flow
-    
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: 401
     end
   end
 
